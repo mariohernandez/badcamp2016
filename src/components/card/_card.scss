@@ -1,0 +1,196 @@
+// Card
+//
+// Card component
+//
+// Markup: card.twig
+//
+// Style guide: Components.card
+
+.card {
+  @include clearfix;
+  position: relative;
+  background-color: $color-gallery;
+
+  @include breakpoint($bp-md) {
+    padding: 0 0 80px 0;
+  }
+
+  // adds white bg behind bio image
+  &:before {
+    content: '';
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: $zi-low;
+    display: block;
+    background-color: $color-white;
+  }
+}
+
+/*** Set the two-column layout on larger displays ***/
+.card__col-1 {
+  @include breakpoint($bp-md) {
+    @include grid-span(3, 3);
+  }
+}
+
+// full bio wrapper which is hidden by default
+.card__col-2 {
+  border-bottom: 1px solid $bamboo;
+  max-height: 0;
+  overflow: hidden;
+  position: relative;
+  transition: max-height .3s ease-in-out;
+
+  @include breakpoint($bp-md) {
+    @include grid-span(5, 7);
+    border: 0;
+    display: block;
+    max-height: 100%;
+    padding: 120px 0 0;
+  }
+
+  // display bio on mobile.
+  &.is-open {
+    max-height: 20em;
+  }
+}
+
+.card__description {
+  padding: 20px 20px 30px;
+
+  @include breakpoint($bp-md) {
+    padding: 0;
+  }
+}
+
+.card__image {
+  position: relative;
+  z-index: $zi-high;
+  text-align: center;
+
+  img {
+    border-radius: 50%;
+  }
+
+  @include breakpoint($bp-md) {
+    margin: 0;
+  }
+}
+
+.card__name {
+  display: none;
+}
+
+.card__name--mobile {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 2.2rem;
+
+  @include breakpoint($bp-md) {
+    display: none; // hides mobile version of name on desktop.
+  }
+}
+
+.card__name--desktop {
+  display: none; // hides desktop version of name on mobile.
+
+  @include breakpoint($bp-md) {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+}
+
+// social media icons
+.card__social-media--intro {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+
+  @include breakpoint($bp-md) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.card__menu--social {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.card__menu--social--item {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  list-style: none;
+  font-size: 50px;
+  margin: 0 5px;
+  line-height: 1;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+
+  a {
+    color: $cloud-burst;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: $color-orange;
+    }
+  }
+
+  span {
+    @include element-invisible;
+  }
+}
+
+// button expands bio on mobile
+.card__view-bio {
+  display: block;
+  position: relative;
+  height: 60px;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: transparent;
+  color: $bamboo;
+  width: 100%;
+  border: 0;
+  border-top: 1px solid $color-silver;
+  text-align: left;
+
+ // adds carat pointing down
+  &::after {
+    @include triangle(down, 24px, 8px, $color-orange);
+    @include vertical-align(absolute);
+    content: "";
+    display: block;
+    right: 40px;
+  }
+
+  // flips carat
+  &.flip-carat {
+    &::after {
+      @include triangle(up, 24px, 8px, $color-orange);
+    }
+  }
+
+  @include breakpoint($bp-md) {
+    display: none;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
+  }
+}

@@ -1,0 +1,16 @@
+// Adds external window link icon to <i> html element.
+@mixin external-link-icon($color: $color-orange) {
+  color: $color;
+  display: inline-block;
+  font-size: 1.6rem;
+  margin-left: 10px;
+  transform: translateY(10px);
+}
+
+// smaller version of icon aligned with text
+@mixin external-link-icon-small {
+  @include external-link-icon;
+  color: inherit;
+  transform: translateY(0);
+  font-size: 1.3rem;
+}

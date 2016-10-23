@@ -1,0 +1,20 @@
+// line following module title
+@mixin title-line($color: $color-dark-blue, $width: 155px) {
+  overflow: hidden;
+  white-space: nowrap;
+
+  &::after {
+    background: $color;
+    content: "";
+    display: inline-block;
+    height: 2px;
+    margin-left: 10px;
+    transform: translateY(-50%);
+    vertical-align: middle;
+    width: 155px;
+
+    @include breakpoint($md) {
+      width: $width;
+    }
+  }
+}

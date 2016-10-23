@@ -1,0 +1,32 @@
+// responsive google map with 16:9 aspect ratio.
+@mixin google-map {
+  position: relative;
+  padding-bottom: 75%; // This is the aspect ratio
+  height: 0;
+  overflow: hidden;
+
+  iframe {
+    height: 100% !important;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100% !important;
+  }
+}
+
+// Adds map pin icons to link elements.
+@mixin map-pin-icon($color: $color-white) {
+  &::before {
+    background: $color;
+    border-radius: 50% 50% 50% 0;
+    content: '';
+    display: block;
+    height: 1.2rem;
+    left: -.6rem;
+    margin: -1rem 0 0 -1rem;
+    position: absolute;
+    top: 1.2rem;
+    transform: rotate(-45deg);
+    width: 1.2rem;
+  }
+}

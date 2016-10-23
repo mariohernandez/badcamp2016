@@ -1,0 +1,21 @@
+{
+  "image": "<img src='/themes/custom/badcamp/src/components/card/assets/miriam-werner.png' alt='test image' width='300' height='300' />",
+  "name":"Miram B. Werner",
+  "bio":"Miriam B. Weiner is an experienced travel writer and editor based in Washington, D.C. She has traveled all around Europe, as well as to countries in Africa and the Middle East. Now she’s set her sights on visiting the U.S. National Parks while providing the inspiration and information others need to make the most of America’s wilderness.",
+  "showBio": "View full biography",
+  "hideBio": "Hide biography",
+  "socialLinks": [
+    {
+      "url": "http://google.com",
+      "title": "Google Plus"
+    },
+    {
+      "url": "http://twitter.com",
+      "title": "Twitter"
+    },
+    {
+      "url": "http://youtube.com",
+      "title": "YouTube"
+    }
+  ]
+}

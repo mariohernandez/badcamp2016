@@ -1,0 +1,15 @@
+// Fade bottom of text
+@mixin text-fade($color: $color-light-blue) {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    background: linear-gradient(to top, rgba($color, 1), rgba($color, 0));
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 50px;
+    position: absolute;
+    width: 100%;
+  }
+}

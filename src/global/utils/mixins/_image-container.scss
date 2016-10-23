@@ -1,0 +1,22 @@
+// reserve space for images to prevent reflow
+@mixin image-container($width: 4, $height: 3) {
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: $height / $width * 100%;
+  }
+
+  > iframe,
+  > img,
+  > a img,
+  > a:link img,
+  > picture,
+  > picture img {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+}

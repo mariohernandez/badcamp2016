@@ -1,0 +1,35 @@
+// Kellum Method Image Replacement
+// http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
+@mixin image-replace($indent: 100%) {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  text-indent: $indent;
+  white-space: nowrap;
+  width: 0;
+}
+
+// Center crop image
+@mixin image-crop($height: 100%) {
+  height: $height;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  picture,
+  img {
+    height: 100%;
+    left: 50%;
+    max-width: none;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+  }
+
+  picture,
+  img.lazyload,
+  img.lazyloading {
+    width: 100%;
+  }
+}

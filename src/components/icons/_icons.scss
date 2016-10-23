@@ -1,0 +1,19 @@
+// Icons
+//
+// Default icon for video player.
+//
+// Markup: <div class="media__video-icon"></div><div class="media__video-icon--small"></div>
+//
+// Style guide: Components.icons
+
+/**
+ * mixin for basic video player icon.
+ */
+/* to render button on style guide */
+.media__video-icon {
+  @include media-video-icon;
+}
+
+.media__video-icon--small {
+  @include media-video-icon(small);
+}

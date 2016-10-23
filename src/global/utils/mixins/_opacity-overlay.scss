@@ -1,0 +1,15 @@
+// allows to add opacity overlay to elements
+@mixin opacity-overlay($opacity, $color: $color-black, $top: 0) {
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: $top;
+    left: 0;
+    background: $color;
+    opacity: $opacity;
+    z-index: $zi-lowest;
+  }
+}

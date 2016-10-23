@@ -1,0 +1,102 @@
+// These mixins allow us to draw a triangle to make up a video play button.
+@mixin triangle($direction: 'up', $width: 50px, $height: 50px, $color: $color-white) {
+  display: block;
+  height: 0;
+  width: 0;
+
+  @if $direction == 'up' {
+    border-bottom: $height solid $color;
+    border-left: ($width/2) solid transparent;
+    border-right: ($width/2) solid transparent;
+    border-top: 0;
+  } @else if $direction == 'down' {
+    border-bottom: 0;
+    border-left: ($width/2) solid transparent;
+    border-right: ($width/2) solid transparent;
+    border-top: $height solid $color;
+  } @else if $direction == 'right' {
+    border-bottom: ($height/2) solid transparent;
+    border-left: $width solid $color;
+    border-right: 0;
+    border-top: ($height/2) solid transparent;
+  } @else if $direction == 'left' {
+    border-bottom: ($height/2) solid transparent;
+    border-left: 0;
+    border-right: $width solid $color;
+    border-top: ($height/2) solid transparent;
+  }
+}
+
+// Video Player Icon.
+$video-icon-size-small-sm: 30px;
+$video-icon-size-small-md: 40px;
+$video-icon-size-large-sm: 50px;
+$video-icon-size-large-md: 60px;
+$video-icon-size-xlarge-sm: 50;
+$video-icon-size-xlarge-md: 80px;
+
+@mixin media-video-icon($size: 'large') {
+  background: $color-orange;
+  border-radius: 50%;
+  height: $video-icon-size-large-sm;
+  position: relative;
+  width: $video-icon-size-large-sm;
+  cursor: pointer;
+
+  @include breakpoint($bp-md) {
+    height: $video-icon-size-large-md;
+    width: $video-icon-size-large-md;
+  }
+
+  @if $size == 'small' {
+    height: $video-icon-size-small-sm;
+    width: $video-icon-size-small-sm;
+
+    @include breakpoint($bp-md) {
+      height: $video-icon-size-small-md;
+      width: $video-icon-size-small-md;
+    }
+  }
+
+  @if $size == 'xlarge' {
+    height: $video-icon-size-xlarge-sm;
+    width: $video-icon-size-xlarge-sm;
+
+    @include breakpoint($bp-md) {
+      height: $video-icon-size-xlarge-md;
+      width: $video-icon-size-xlarge-md;
+    }
+  }
+
+  &:hover {
+    background: $color-orange-hover;
+  }
+
+  &::after {
+    @include triangle(right, ($video-icon-size-large-sm/1.75), $video-icon-size-large-sm, $color-white);
+    content: '';
+    display: block;
+    margin: 0 auto;
+    transform: scale(.22) translateX(15%);
+
+    @include breakpoint($bp-md) {
+      @include triangle(right, ($video-icon-size-large-md/1.75), $video-icon-size-large-md, $color-white);
+    }
+
+    @if $size == 'small' {
+      @include triangle(right, ($video-icon-size-small-sm/1.75), $video-icon-size-small-sm, $color-white);
+
+      @include breakpoint($bp-md) {
+        @include triangle(right, ($video-icon-size-small-md/1.75), $video-icon-size-small-md, $color-white);
+      }
+    }
+
+    @if $size == 'xlarge' {
+      @include triangle(right, ($video-icon-size-xlarge-sm/1.75), $video-icon-size-xlarge-sm, $color-white);
+
+      @include breakpoint($bp-md) {
+        @include triangle(right, ($video-icon-size-xlarge-md/1.75), $video-icon-size-xlarge-md, $color-white);
+      }
+    }
+  }
+}

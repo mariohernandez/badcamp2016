@@ -1,0 +1,15 @@
+@mixin white-strip($right, $left, $height, $position: absolute, $bottom: 0) {
+  position: $position;
+  bottom: $bottom;
+  right: $right;
+  left: $left;
+  height: $height;
+  background-color: $color-white;
+
+  @include breakpoint($md) {
+    right: 0;
+    left: inherit;
+    width: 63%;
+    height: 50px;
+  }
+}

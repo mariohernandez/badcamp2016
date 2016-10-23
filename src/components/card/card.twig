@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Card component.
+ *
+ * Available variables:
+ * - image: headshot of user.
+ * - name: name of user.
+ * - bio: user's bio.
+ * - showBio: Shows biography.
+ * - hideBio" Hides bio.
+ * - socialLinks: Social media channels array.
+ *   - title: name of social channel.
+ *   - url: url of channel.
+ */
+#}
+<div class="card {{ classes|default('') }}">
+  <div class="card__col-1">
+    <div class="card__image">
+      {{ image }}
+    </div>
+    <h2 class="card__name--mobile">{{ name }}</h2>
+    <div class="card__social-media">
+      <div class="card__social-media--intro">Follow on:</div>
+      <ul class="menu card__menu--social">
+        {% for link in socialLinks %}
+          <li class="card__menu--social--item">
+            <a href="{{ link.url }}" class="icon-{{ link.title|replace({' ': '-'})|lower }}">
+              <span>{{ link.title }}</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <button class="card__view-bio">{{ showBio }}</button>
+  <div class="card__col-2">
+    <h4 class="card__name--desktop">{{ name }}</h4>
+    <div class="card__description">{{ bio }}</div>
+  </div>
+</div>

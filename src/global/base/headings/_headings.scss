@@ -1,0 +1,53 @@
+// Headings
+//
+// Markup:
+// <h1>Headline 1:</h1>
+// <h1>Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo</h1>
+// <hr class="divider-ruler">
+// <h2>Headline 2:</h2>
+// <h2>Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo</h2>
+// <hr class="divider-ruler">
+// <h3>Headline 3:</h3>
+// <h3>Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo</h3>
+// <hr class="divider-ruler">
+// <h4>Headline 4:</h4>
+// <h4>Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo</h4>
+// <hr class="divider-ruler">
+// <h5>Headline 5:</h5>
+// <h5>Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo</h5>
+// <hr class="divider-ruler">
+// <h6>Headline 6:</h6>
+// <h6>Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo</h6>
+//
+// Style guide: base.headlines
+
+.divider-ruler {
+  display: block;
+  height: 1px;
+  border: none;
+  padding: 20px 0;
+}
+
+h1 {
+  @include heading-1;
+}
+
+h2 {
+  @include heading-2;
+}
+
+h3 {
+  @include heading-3;
+}
+
+h4 {
+  @include heading-4;
+}
+
+h5 {
+  @include heading-5;
+}
+
+h6 {
+  @include heading-6;
+}
