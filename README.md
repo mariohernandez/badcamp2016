@@ -1,4 +1,7 @@
-## Getting Started
+## BADCamp experiment Drupal 8 theme
+As part of my talk on Component-driven theming at the 2016 BADCamp at UC Berkeley, I created an experimental Drupal 8 theme to demo how you can create components using twig and kss node and then integrate them with Drupal.
+
+
 If you haven't yet, install nvm:
 https://github.com/creationix/nvm
 
@@ -36,3 +39,21 @@ _This is ideal when you are doing a lot of Sass changes and you want to make sur
 `npm run clean`
 
 _This will perform a one-time deletion of all compiled files within the dist/ directory._
+
+## Do the next in Drupal
+
+### Paragraph's module
+_Install the paragraph's module and its dependencies._
+
+### Components Libraries module
+_Install the Components Libraries module which will allow for Drupal to be aware of your components._
+
+### Create a Paragraph type
+_For this example, create a paragraph type called 'card' with the following fields:_
+* Name (text field)
+* Photo (Image)
+* Bio (long text)
+* Social Links (Link)
+
+### Create a custom Paragraph template
+_After creating a node using the paragraph type above, create a custom Twig template to override the default paragraph twig template using for drupal.  This template can exist inside /badcamp/templates._
